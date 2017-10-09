@@ -7,17 +7,17 @@ from bs4 import BeautifulSoup
 url='https://news.google.com/news/headlines?hl=en'
 webpageText = requests.get(url)
 soup = BeautifulSoup(webpageText.text, 'html.parser')
-print(soup.prettify())
+#print(soup.prettify())
 headlines = soup.find_all('a',role="heading")
 for headlineName in headlines:
     articleLink = headlineName["href"]
-    print("ALL HEADLINE: " + str(headlineName))
+    #print("ALL HEADLINE: " + str(headlineName))
     #print("THE HEADLINE HAS AN aria-level value of " + headlineName["aria-level"])
     #print("HEADLINE OF A RELATED COVERAGE: " + headlineName.text)
     #print("LINK OF ABOVE HEADLINE: " + articleLink)
 
 
-    if(headlineName["aria-level"] is not "3"): #ignore 'RELATED COVERAGE'
+    if(headlineName["aria-level"] is "2"): #ignore 'RELATED COVERAGE'
         print("HEADLINE: " + headlineName.text)
         print("LINK OF ABOVE HEADLINE: " + articleLink)
     
@@ -31,5 +31,6 @@ for headlineName in headlines:
 #figure out how to get just main headlines.  If user wants related coverage, type in 'e'
 #get the weather
 #save the weather images and print them to console
+#local news also by typing local
 
 

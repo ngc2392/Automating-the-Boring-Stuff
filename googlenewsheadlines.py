@@ -51,4 +51,6 @@ for headlineName in headlines:
 #save the weather images and print them to console
 #local news also by typing local
 
+#something is wrong with some of the links.  Can test by individually trying to get summary in terminal command
 
+#use try catch .. if error occurs print out "there was an error"

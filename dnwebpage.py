@@ -4,12 +4,12 @@ import requests
 from bs4 import BeautifulSoup
 #pip3.5 install beautifulsoup4
 
-res = requests.get('https://www.washingtonpost.com/news/post-politics/wp/2017/10/08/trump-administration-releases-hard-line-immigration-principles-threatening-deal-on-dreamers/?utm_term=.aa022aa887ca')
+res = requests.get('http://www.gutenberg.org/cache/epub/1112/pg1112.txt')
 type(res)
 res.status_code == requests.codes.ok
 len(res.text)
 soup = BeautifulSoup(res.text, 'html.parser')
-print(soup.find_all('p'))
+#print(soup.find_all('p'))
 #print(soup.prettify())
 #print(res.text)
-#print(res.text[:10000000])
+print(res.text[:10000000])
